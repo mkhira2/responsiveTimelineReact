@@ -1,0 +1,168 @@
+/*--------------------------------------------------
+ALWAYS INCLUDE
+--------------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+
+/*--------------------------------------------------
+BASIC SETUP
+--------------------------------------------------*/
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.row1,
+.row2,
+.row3 {
+    margin: 10px;
+}
+
+.left,
+.right,
+.middle {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.left {
+    width: 20%;
+}
+
+.middle {
+    width: 10%;
+}
+
+.right {
+    background: #6CB0DE;
+    color: white;
+    width: 65%;
+    border-radius: 2%;
+    padding: 0 10px;
+    position: relative;
+}
+
+.top {
+    border-bottom: 1px solid white;
+}
+
+.middle {
+    vertical-align: top;
+    text-align: center;
+    position: relative;
+}
+
+.date {
+    font-size: 10px;
+    text-align: right;
+    color: grey;
+}
+
+.time {
+    font-size: 32px;
+    text-align: right;
+    color: #6CB0DE;
+    font-weight: bold;
+    margin-top: -20px;
+}
+
+.material-icons {
+    background: #6CB0DE;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+
+/*adding vertical line*/
+
+.middle:after {
+    content: ' ';
+    position: absolute;
+    width: 5px;
+    height: 300px;
+    left: 47%;
+    z-index: -1;
+    background-color: #CEE3F8;
+}
+
+
+/*adding border to vertical line*/
+
+.middle:before {
+    content: ' ';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #CEE3F8;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(-7px, -8px);
+}
+
+
+/*moving position of notch*/
+
+.right:after {
+    content: ' ';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 5%;
+    left: -1%;
+    transform: rotate(45deg);
+    background-color: #6CB0DE;
+}
+
+
+/*--------------------------------------------------
+MEDIA QUERIES
+--------------------------------------------------*/
+
+
+/*decrease time font size*/
+
+@media (max-width: 950px) {
+    .time {
+        font-size: 18px;
+    }
+}
+
+
+/*move multimedia icons to top-right of rows*/
+
+@media (max-width: 750px) {
+    .left {
+        display: block;
+    }
+    .right {
+        width: 100%;
+    }
+    .row1,
+    .row2,
+    .row3 {
+        position: relative;
+    }
+    .middle {
+        position: absolute;
+        top: 5px;
+        right: 0;
+    }
+    .time,
+    .date {
+        text-align: left;
+    }
+    .middle:after {
+        display: none;
+    }
+    .right:after {
+        top: -2%;
+        left: 2%;
+        height: 15px;
+    }
+}
