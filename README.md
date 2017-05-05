@@ -5,7 +5,7 @@ your browser window. See if you can catch all the changes!
 
 
 ## Screenshot
-![Responsive Timeline](/dist/assets/images/tshirts.png)
+![Responsive Timeline](/dist/assets/images/responsivetimeline.png)
 
 ## Installation
 
